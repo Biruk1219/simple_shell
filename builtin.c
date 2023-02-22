@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * _myexit - exits the shell
  * @info: Structure containing potential arguments. Used to maintain
@@ -73,10 +72,8 @@ int _mycd(info_t *info)
 		_eputs(info->argv[1]), _eputchar('\n');
 	}
 	else
-	{
 		_setenv(info, "OLDPWD", _getenv(info, "PWD="));
 		_setenv(info, "PWD", getcwd(buffer, 1024));
-	}
 	return (0);
 }
 /**
@@ -95,4 +92,3 @@ int _myhelp(info_t *info)
 		_puts(*arg_array); /* temp att_unused workaround */
 	return (0);
 }
-
